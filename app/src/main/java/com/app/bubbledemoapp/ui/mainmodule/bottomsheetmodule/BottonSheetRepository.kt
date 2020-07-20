@@ -6,9 +6,6 @@ import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.app.bubbledemoapp.Utils.DialogUtils
-import com.app.bubbledemoapp.core.network.webservice.RetrofitCallAPI
-import com.app.bubbledemoapp.core.network.webservice.WebServiceAPI
-import com.app.bubbledemoapp.data.room.DatabaseHelper
 import com.app.bubbledemoapp.ui.mainmodule.bottomsheetmodule.model.ProductModelPojo
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.gson.Gson
@@ -44,10 +41,7 @@ class BottonSheetRepository {
                         Gson().toJson(document.data),
                         ProductModelPojo::class.java
                     )
-
                     tempProductModelPojo.value = productModelPojo
-                    System.out.println("Result="+productModelPojo)
-                    //  (Gson().toJson(document.data))
                 } else {
                     Log.d("TAG", "No such document")
                 }

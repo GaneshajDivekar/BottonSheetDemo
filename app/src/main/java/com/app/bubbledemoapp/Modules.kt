@@ -1,9 +1,8 @@
 package com.app.bubbledemoapp
 
 import com.app.bubbledemoapp.ui.mainmodule.MainViewModel
-import com.app.bubbledemoapp.ShiftApplication.Companion.applicationContext
+import com.app.bubbledemoapp.BulBulApplication.Companion.applicationContext
 import com.app.bubbledemoapp.ui.mainmodule.bottomsheetmodule.BottomSheetViewModel
-import com.app.bubbledemoapp.data.room.DatabaseHelper
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.module.Module
@@ -31,13 +30,7 @@ private val viewModelModule: Module = module {
     viewModel {
         MainViewModel(application = get())
         BottomSheetViewModel(application = get())
-
     }
-
-
-
-    factory { DatabaseHelper.getDatabase(applicationContext).interfaceDao() }
-
     single {
 
     }

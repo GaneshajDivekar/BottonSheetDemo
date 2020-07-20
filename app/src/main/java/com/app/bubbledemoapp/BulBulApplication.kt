@@ -9,27 +9,27 @@ import org.koin.android.ext.koin.androidFileProperties
 import org.koin.core.context.startKoin
 
 
-class ShiftApplication : Application() {
+class BulBulApplication : Application() {
 
     init {
-        shiftApplication = this
+        bulBulApplication = this
     }
 
     override fun onCreate() {
         super.onCreate()
-        startKoin { androidContext(this@ShiftApplication)
+        startKoin { androidContext(this@BulBulApplication)
             androidFileProperties()
         }
         injectFeature()
     }
 
     companion object {
-        lateinit var shiftApplication: ShiftApplication
+        lateinit var bulBulApplication: BulBulApplication
             private set
 
         val applicationContext: Context
             get() {
-                return shiftApplication.applicationContext
+                return bulBulApplication.applicationContext
             }
     }
 

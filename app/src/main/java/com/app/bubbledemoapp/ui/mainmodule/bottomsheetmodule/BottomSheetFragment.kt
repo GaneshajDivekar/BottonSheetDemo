@@ -11,8 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.app.bubbledemoapp.R
-import com.app.bubbledemoapp.ShiftApplication.Companion.applicationContext
-import com.app.bubbledemoapp.Utils.DialogUtils
+import com.app.bubbledemoapp.BulBulApplication.Companion.applicationContext
 import com.app.bubbledemoapp.core.presentation.base.BaseFragment
 import com.app.bubbledemoapp.databinding.FragmentBottomSheetBinding
 import com.app.bubbledemoapp.ui.mainmodule.bottomsheetmodule.adapter.ColorAdapter

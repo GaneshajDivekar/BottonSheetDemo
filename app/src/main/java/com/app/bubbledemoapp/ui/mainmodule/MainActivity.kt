@@ -9,8 +9,9 @@ import com.google.firebase.FirebaseApp
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>(), MainNavigator {
-    var activityMainBinding: ActivityMainBinding? = null
-    val mainViewModel:MainViewModel by viewModel()
+    private var activityMainBinding: ActivityMainBinding? = null
+    private val mainViewModel:MainViewModel by viewModel()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         activityMainBinding = getViewDataBinding()
