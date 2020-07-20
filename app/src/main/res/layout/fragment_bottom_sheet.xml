@@ -1,0 +1,372 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.app.bubbledemoapp.ui.mainmodule.bottomsheetmodule.BottomSheetFragment">
+
+    <data>
+
+        <variable
+            name="bottomSheetCall"
+            type="com.app.bubbledemoapp.ui.mainmodule.bottomsheetmodule.BottomSheetNavigator" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_marginBottom="@dimen/_50sdp"
+            android:id="@+id/nestedScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteX="-82dp"
+                tools:layout_editor_absoluteY="0dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    app:cardCornerRadius="@dimen/_6sdp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imgProduct"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@mipmap/ic_launcher"
+                        android:scaleType="fitXY" />
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/txtProductName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="TextView"
+                    android:textColor="@android:color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/cardView"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtProductPrizeAfterOff"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="TextView"
+                    android:textColor="@color/light_orage"
+                    app:layout_constraintEnd_toStartOf="@+id/txtProdActualPrize"
+                    app:layout_constraintStart_toEndOf="@+id/cardView"
+                    app:layout_constraintTop_toBottomOf="@+id/txtProductName" />
+
+                <TextView
+                    android:id="@+id/txtProdActualPrize"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="TextView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/txtProductPrizeAfterOff"
+                    app:layout_constraintTop_toBottomOf="@+id/txtProductName" />
+
+                <TextView
+                    android:id="@+id/txtOffPercentage"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="TextView"
+                    android:textColor="@color/light_green"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/cardView"
+                    app:layout_constraintTop_toBottomOf="@+id/txtProductPrizeAfterOff" />
+
+                <TextView
+                    android:id="@+id/txtProductDesc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="8dp"
+                    android:text="TextView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/cardView"
+                    app:layout_constraintTop_toBottomOf="@+id/txtOffPercentage" />
+
+                <TextView
+                    android:id="@+id/imgFreeShipping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:drawableTop="@drawable/ic_free_delivery"
+                    android:text="मुफ़्त शिपिंग"
+                    app:layout_constraintEnd_toStartOf="@+id/imgExcangable"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtProductDesc"
+                    app:srcCompat="@drawable/ic_launcher_background" />
+
+                <TextView
+                    android:id="@+id/imgExcangable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:drawableTop="@drawable/ic_free_delivery"
+                    android:text="बदलानेवाला"
+                    app:layout_constraintEnd_toStartOf="@+id/imgReturnable"
+                    app:layout_constraintStart_toEndOf="@+id/imgFreeShipping"
+                    app:layout_constraintTop_toBottomOf="@+id/txtProductDesc"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/imgReturnable"
+                    android:layout_width="59dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginTop="16dp"
+                    android:drawableTop="@drawable/ic_free_delivery"
+                    android:text="वापस करने"
+                    app:layout_constraintStart_toEndOf="@+id/imgExcangable"
+                    app:layout_constraintTop_toBottomOf="@+id/txtProductDesc"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <TextView
+                    android:id="@+id/txtxSizeChart"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="Size chart Dekho"
+                    android:textColor="@color/light_orage"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imgExcangable" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/layoutSize"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtxSizeChart">
+
+                    <TextView
+                        android:id="@+id/txtSizeChoose"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:text="साइज चुने"
+                        android:textColor="@android:color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewSize"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtSizeChoose" />
+
+
+                    <TextView
+                        android:id="@+id/txtColorChoose"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:text="रंग चुने"
+                        android:textColor="@android:color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/recyclerViewSize" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerViewColor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtColorChoose" />
+
+                    <TextView
+                        android:id="@+id/txtcount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:text="मात्रा चुने"
+                        android:textColor="@android:color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/recyclerViewColor" />
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/layoutQty"
+                        android:layout_width="@dimen/_70sdp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/qty_drwable"
+                        android:foregroundGravity="left"
+                        android:padding="@dimen/_4sdp"
+                        android:visibility="visible"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtcount">
+
+
+                        <ImageView
+                            android:id="@+id/imgMinusQty"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:onClick="@{()->bottomSheetCall.clickOnMius()}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_minus" />
+
+                        <ImageView
+                            android:id="@+id/imgAddQty"
+                            android:layout_width="wrap_content"
+                            android:layout_height="0dp"
+                            android:onClick="@{()->bottomSheetCall.clickOnPlus()}"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_add" />
+
+                        <TextView
+                            android:id="@+id/edtQtyResult"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="@dimen/_6sdp"
+                            android:text="0"
+                            android:textColor="@color/light_orage"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/imgAddQty"
+                            app:layout_constraintStart_toEndOf="@+id/imgMinusQty"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <TextView
+                        android:id="@+id/txtProdDec"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:text="उत्पाद वर्णन"
+                        android:textColor="@android:color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/layoutQty" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recyclerProductDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="8dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtProdDec" />
+
+
+                    <TextView
+                        android:id="@+id/txtSalesDetail"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="16dp"
+                        android:text="विक्रेता विवरण"
+                        android:textColor="@android:color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/recyclerProductDesc" />
+
+                    <TextView
+                        android:id="@+id/txtSales"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:paddingBottom="@dimen/_10sdp"
+                        android:text="विक्रेता विवरण"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txtSalesDetail" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_gravity="bottom"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/button_addtocart"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/addtocart"
+                android:onClick="@{()->bottomSheetCall.clickOnAddtocart()}"
+                android:text="बैग में डाल"
+                android:textColor="@color/light_orage"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/button_buynow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button_buynow"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/buynow"
+                android:onClick="@{()->bottomSheetCall.clickOnBuyNow()}"
+                android:text="अभी खरीदें"
+                android:textColor="#fff"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/button_addtocart"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>
